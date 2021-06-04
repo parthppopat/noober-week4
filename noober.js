@@ -17,27 +17,27 @@ window.addEventListener('DOMContentLoaded', async function() {
     let rideType 
     if (rideData[i].purpleRequested==true){
       rideType = `
-      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-purple-500 bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
-      <span>Noober Purple</span>
+      <span class="text-purple-500">Noober Purple</span>
       </h1>
       <div class="border-4 border-purple-500 p-4 my-4 text-left">
       `
     } else if (rideData[i].numberOfPassengers > 3){
       rideType = `
-      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-grya-900 bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
-      <span>Noober<span class="text-3xl">XL</span></span>
+      <span>Noober<span class="text font-bold">XL</span></span>
       </h1>
       <div class="border-4 border-gray-900 p-4 my-4 text-left">
       `
     } else {
       rideType = `
-      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-500">
       <i class="fas fa-car-side"></i>
       <span>Noober X</span>
       </h1>
-      <div class="border-4 border-gray-900 p-4 my-4 text-left">
+      <div class="border-4 border-blue-500 p-4 my-4 text-left">
       `
     } 
 
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     let dropLocationLine1 = rideData[i].dropoffLocation.address
     let dropLocationLine2 = `${rideData[i].dropoffLocation.city}, ${rideData[i].dropoffLocation.state} ${rideData[i].dropoffLocation.zip}`
 
-    // Insert HTML into the rides element, using the data from rideData
+    // Modifying rides element using HTML directly, using the data from rideData
     let ridesData= document.querySelector(`.rides`)
     ridesData.insertAdjacentHTML('beforeend',`
     ${rideType}
